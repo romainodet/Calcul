@@ -10,9 +10,10 @@ Fonctionnalités possibles :
 Votre nom :
 
 Vos fonctionnalités :
- -
- -
- -
+ - rot13 avec prise en charge maj et min
+ - Celcius en farenheit et inverse
+ - celcius en kelvin
+ - dollar vers euros
 
 
 

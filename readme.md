@@ -7,13 +7,14 @@ Fonctionnalités possibles :
  - Convertir des devises (Euros <=> Dollar)
  - ...
 
-Votre nom :
+Votre nom : Romain ODET
+GITHUB REPO : https://github.com/romainodet/Calcul.git
 
 Vos fonctionnalités :
- - rot13 avec prise en charge maj et min
+ -  done rot13 avec prise en charge maj et min
  - Celcius en farenheit et inverse
  - celcius en kelvin
- - dollar vers euros
+ - done dollar vers euros
 
 
 

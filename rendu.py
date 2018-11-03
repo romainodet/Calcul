@@ -22,10 +22,15 @@
 """
 # defintion des vars
 text = ""
-decalage = 0
-def pause():
 
-    input()
+def blank(lignes):
+    """docstring for blank"""
+    for i in range (lignes):
+        print("")
+
+def pause():
+    """docstring for pause"""
+    raw_input()
 
 def dectobin(value):
 
@@ -35,7 +40,7 @@ def dectobin(value):
         value = value // 2
     digits.reverse()
     print("".join([str(d) for d in digits]))
-    pause()
+    input()
 
 def bintodec(bin_string):
 
@@ -45,7 +50,7 @@ def bintodec(bin_string):
         if char == 1:
             result += 2 ** (len(bin_string) - 1 - i)
     print("The result is : ", result)
-    pause()
+    input()
 
 def rot13(text):
 
@@ -61,7 +66,7 @@ def rot13(text):
     for i in range (len(text)):
         tableau[i] = chr(tableau[i])
     print ''.join(tableau)
-    pause()
+    input()
 
 def fartocel(temp):
     """docstring for fartocel"""
@@ -76,9 +81,21 @@ def kelvintocel(temp):
     """docstring for kelvintocel"""
     
 def currency(price):
-    """docstring for currency"""
-    
+    convert = 0.00
+    tableau = list(price)
+    if len(tableau) == 6:
+        tableau[5] = tableau[5].lower()
+        seq = [tableau[0],tableau[1],'.',tableau[3],tableau[4]]
+        prix = float("".join(seq))
+        if tableau[5] == "e":
+            convert = prix / 0.878144
+            final = str(round(convert, 2)) + ' $'
+        elif tableau[5] == "d":
+            convert = prix * 0.878144
+            final = str(round(convert, 2)) + ' €'
 
+    print(final)
+    
 # Author : Antoine Scherrer <antoine.scherrer@lecol-ldlc.com>
 # Licence : GPL
 # Boucle pour permetre à l'utilsateur de convertir plusieurs nombres
@@ -97,7 +114,7 @@ while True:
         text = raw_input("Tapez le texte à tourner de 13 charactères... : ")
         rot13(text)
     elif choice == 4:
-        price = raw_input("Merci d'entrez un prix en avec le signe de la monnaie (€ ou $) à la fin du prix : 14.50€ ou 8.30$ : ")
+        price = raw_input("Merci d'entrez un prix en avec la première lettre de la monaie (e ou d) à la fin du prix : 14.50e ou 08.30d : ")
         currency(price)
     elif choice == 0:
         exit("Interruption demandé par l'utilisateur")

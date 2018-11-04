@@ -12,10 +12,10 @@
 #####GITHUB REPO : https://github.com/romainodet/Calcul.git
 
 ##Vos fonctionnalités :
- - (done) Convertisseur ROT13
- - (done) Convertisseur de température
- - (done) Convertisseur Dollar vers Euros 
- - (done) Convertisseur TTC <=> HT
- - (done) Convertisseur RGB vers CMJN et hexadecimal
+- [x] Convertisseur ROT13
+- [x] Convertisseur de température
+- [x] Convertisseur Dollar vers Euros 
+- [x] Convertisseur TTC <=> HT
+- [x] Convertisseur RGB vers CMJN et hexadecimal
 
 

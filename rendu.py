@@ -20,19 +20,18 @@
      By: romain.odet <romain.odet@lecole-ldlc.com>           
      Created: 24/10/2018 15:26 by Romain ODET  
 """
-# defintion des vars
+# Functions start
 
+# Function permit to clear the screen with the number of line which are indicate in the attribute
 def blank(lignes):
-    """docstring for blank"""
-    for i in range(lignes):
+    for i in range(lignes): #
         print("")
 
-
+# Function reproduce the pause() function in C
 def pause():
-    """docstring for pause"""
     input()
 
-
+# Function to convert the decimal numbers into binary numbers
 def dectobin(value):
     digits = []
     while value > 0:
@@ -43,7 +42,7 @@ def dectobin(value):
     pause()
     blank(30)
 
-
+# Function permit to convert binary string into a decimal number
 def bintodec(bin_string):
     result = 0
     for i in range(len(bin_string)):
@@ -54,7 +53,7 @@ def bintodec(bin_string):
     pause()
     blank(30)
 
-
+# Function which permit to make a ROT13 of a sentence
 def rot13(text):
     tableau = list(text)
     for i in range(len(text)):
@@ -71,7 +70,7 @@ def rot13(text):
     pause()
     blank(30)
 
-
+# Function permit to convert a temeprature in kelvin, farenheit or celcius in the the others temperatures
 def tempconvert(temp):
     tableau = list(temp)
     unite = tableau[len(tableau) - 1].lower()
@@ -99,7 +98,7 @@ def tempconvert(temp):
     pause()
     blank(30)
 
-
+# Function permit to convert euro to dollar or dollar to euro
 def currency(price):
     convert = 0.00
     tableau = list(price)
@@ -118,6 +117,7 @@ def currency(price):
     pause()
     blank(30)
 
+# Function permit to add or subtract the VAT to a price
 def TVA_Adder(price,type_prix,cat_tva):
     tva = 0
     if cat_tva == 1: # TVA à 5.5%
@@ -141,6 +141,7 @@ def TVA_Adder(price,type_prix,cat_tva):
     blank(30)
     return 0
 
+# Function permit to convert a RGB color into CMYK and hex color
 def rgbtocmyk(R, G, B):
     C = 1 - (R / 255)
     M = 1 - (G / 255)
@@ -180,9 +181,11 @@ def rgbtocmyk(R, G, B):
     print(" - Hexadécimal : ", hexa.upper(), end="")
     pause()
     blank(30)
+# Functions finish
 
+
+# Start program
 while True:
-    # demande à l'utilisateur le type de conversion qu'il souhaite
     print("""Le CONVERTISSEUR""")
     print("")
     choice = int(input(
@@ -223,3 +226,4 @@ while True:
                 break
     elif choice == 0:
         exit("Interruption demandé par l'utilisateur")
+# End of the program

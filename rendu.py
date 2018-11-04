@@ -21,8 +21,6 @@
      Created: 24/10/2018 15:26 by Romain ODET  
 """
 # defintion des vars
-text = ""
-
 
 def blank(lignes):
     """docstring for blank"""
@@ -120,13 +118,35 @@ def currency(price):
     pause()
     blank(30)
 
+def TVA_Adder(price,type_prix,cat_tva):
+    tva = 0
+    if cat_tva == 1: # TVA à 5.5%
+        tva = 5.5
+    elif cat_tva == 2: # TVA à 10%
+        tva = 10
+    elif cat_tva == 3: # TVA à 20%
+        tva = 20
+    else:
+        tva = cat_tva
+
+    if type_prix == 1: # prix en TTC à convertir en HT
+        print("Le prix entré est", round(price,2), "€ TTC, la TVA à soustraire est de", tva, "%")
+        print("Le prix sans TVA est de :", round(price/(1+(tva/100)),2), "€ HT")
+    elif type_prix == 2: # prix en HT à convertir en TTC
+        print("Le prix entré est", round(price,2), "€ HT, la TVA à ajouter est de", tva, "%")
+        print("Le prix avec TVA est de :", round(price*(1+(tva/100)), 2), "€ TTC")
+    else:
+        print("Erreur : Votre prix n'est pas TTC ou HT merci de réessayer.")
+    pause()
+    blank(30)
+    return 0
 
 while True:
     # demande à l'utilisateur le type de conversion qu'il souhaite
     print("""Le CONVERTISSEUR""")
     print("")
     choice = int(input(
-        " - Tapez 1 pour convertir un nombre décimal en binaire\n - Tapez 2 pour convertir un nombre binaire vers un nombre décimal\n - Tapez 3 avoir un texte en rot13\n - Tapez 4 pour convertir des dollars en euros\n - Tapez 5 pour convertir une température\n\n - Tapez 0 pour quitter\n\n Faites votre choix : "))
+        " - Tapez 1 pour convertir un nombre décimal en binaire\n - Tapez 2 pour convertir un nombre binaire vers un nombre décimal\n - Tapez 3 avoir un texte en rot13\n - Tapez 4 pour convertir des dollars en euros\n - Tapez 5 pour convertir une température\n - Tapez 6 pour convertir des prix en TTC ou HT\n\n - Tapez 0 pour quitter\n\n Faites votre choix : "))
     if choice == 1:
         value = int(input("Which number do you want to convert ?"))
         dectobin(value)
@@ -144,5 +164,10 @@ while True:
         temp = input(
             "Merci d'entrez une température décimale avec son unité (Celcius =c, kelvin = k, farenheit = f) : ")
         tempconvert(temp)
+    elif choice == 6:
+        price = float(input("Merci d'entrez un prix... : "))
+        HT_TTC = int(input("Produit TTC tapez 1 ou produit HT tapez 2 : "))
+        cat_tva = float(input("Pour une TVA à :\n - 5.5% tapez 1\n - 10% tapez 2\n - 20 % tapez 3\n Pour un autre taux tapez le ici : "))
+        TVA_Adder(price, HT_TTC, cat_tva)
     elif choice == 0:
         exit("Interruption demandé par l'utilisateur")

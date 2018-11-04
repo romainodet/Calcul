@@ -1,20 +1,20 @@
-Description : Convertisseur binaire/décimal et inversement.
-Notions : Entrées, conditions, mathématiques, fonctions
-Difficulté : VERT
-Fonctionnalités possibles :
+#Convertisseur binaire/décimal et inversement. Amélioré.
+###Notions : Entrées, conditions, mathématiques, fonctions
+###Difficulté : VERT
+##Fonctionnalités possibles :
  - Convertir depuis/vers héxadécimal, sexagésimal
  - Convertir des unités (système métrique <=> système impérial)
  - Convertir des devises (Euros <=> Dollar)
  - ...
 
-Votre nom : Romain ODET
-GITHUB REPO : https://github.com/romainodet/Calcul.git
+#Romain ODET 
+######<romain.odet@lecole-ldlc.com>
+#####GITHUB REPO : https://github.com/romainodet/Calcul.git
 
-Vos fonctionnalités :
- -  done rot13 avec prise en charge maj et min
- - Celcius en farenheit et inverse
- - celcius en kelvin
- - done dollar vers euros
-
+##Vos fonctionnalités :
+ - (done) Convertisseur ROT13
+ - (done) Convertisseur de température
+ - (done) Convertisseur Dollar vers Euros 
+ - (done) Convertisseur TTC <=> HT
 
 

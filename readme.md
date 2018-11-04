@@ -16,5 +16,6 @@
  - (done) Convertisseur de température
  - (done) Convertisseur Dollar vers Euros 
  - (done) Convertisseur TTC <=> HT
+ - (done) Convertisseur RGB vers CMJN et hexadecimal
 
 

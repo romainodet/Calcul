@@ -141,17 +141,57 @@ def TVA_Adder(price,type_prix,cat_tva):
     blank(30)
     return 0
 
+def rgbtocmyk(R, G, B):
+    C = 1 - (R / 255)
+    M = 1 - (G / 255)
+    Y = 1 - (B / 255)
+
+    var_K = 1
+
+    if (C < var_K):
+        var_K = C
+
+    if (M < var_K):
+        var_K = M
+
+    if (Y < var_K):
+        var_K = Y
+
+    if (var_K == 1): # Seulement du noir
+        C = 0
+        M = 0
+        Y = 0
+
+    else:
+        C = ( C - var_K ) / ( 1 - var_K )
+        M = ( M - var_K ) / ( 1 - var_K )
+        Y = ( Y - var_K ) / ( 1 - var_K )
+
+    K = var_K
+
+    print ("Votre couleur RGB (", R, G, B, ") est désormais convertis en :")
+    print(" - CMJN : ", round(C*100) , round(M*100) , round(Y*100) , round(K*100))
+
+    R_hex = str(hex(R))
+    G_hex = str(hex(G))
+    B_hex = str(hex(B))
+    hexa = "#" + R_hex[2:] + G_hex[2:] + B_hex[2:]
+
+    print(" - Hexadécimal : ", hexa.upper(), end="")
+    pause()
+    blank(30)
+
 while True:
     # demande à l'utilisateur le type de conversion qu'il souhaite
     print("""Le CONVERTISSEUR""")
     print("")
     choice = int(input(
-        " - Tapez 1 pour convertir un nombre décimal en binaire\n - Tapez 2 pour convertir un nombre binaire vers un nombre décimal\n - Tapez 3 avoir un texte en rot13\n - Tapez 4 pour convertir des dollars en euros\n - Tapez 5 pour convertir une température\n - Tapez 6 pour convertir des prix en TTC ou HT\n\n - Tapez 0 pour quitter\n\n Faites votre choix : "))
+        " - Tapez 1 pour convertir un nombre décimal en binaire\n - Tapez 2 pour convertir un nombre binaire vers un nombre décimal\n - Tapez 3 avoir un texte en rot13\n - Tapez 4 pour convertir des dollars en euros\n - Tapez 5 pour convertir une température\n - Tapez 6 pour convertir des prix en TTC ou HT\n - Tapez 7 pour convertir une couleur RGB en CMJN et hexadécimal\n\n - Tapez 0 pour quitter\n\n Faites votre choix : "))
     if choice == 1:
-        value = int(input("Which number do you want to convert ?"))
+        value = int(input("Quel nombre voulez vous convertir ?"))
         dectobin(value)
     elif choice == 2:
-        bin_string = input("Which binary string do you want to convert ?")
+        bin_string = input("Quel nombre binaire voulez vous convertir ?")
         bintodec(bin_string)
     elif choice == 3:
         text = input("Tapez le texte à tourner de 13 charactères... : ")
@@ -169,5 +209,17 @@ while True:
         HT_TTC = int(input("Produit TTC tapez 1 ou produit HT tapez 2 : "))
         cat_tva = float(input("Pour une TVA à :\n - 5.5% tapez 1\n - 10% tapez 2\n - 20 % tapez 3\n Pour un autre taux tapez le ici : "))
         TVA_Adder(price, HT_TTC, cat_tva)
+    elif choice == 7:
+        while True:
+            print("Merci d'entrez les couleurs à convertir : ")
+            R = int(input("ROUGE : "))
+            G = int(input("VERT : "))
+            B = int(input("BLEU : "))
+            if (R > 255 or R < 0 or G > 255 or G < 0 or  B > 255 or B < 0):
+                print("erreur, la valeur saisie est incorrect")
+                pause()
+            else:
+                rgbtocmyk(R, G, B)
+                break
     elif choice == 0:
         exit("Interruption demandé par l'utilisateur")

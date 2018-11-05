@@ -10,6 +10,7 @@ Difficulté : VERT
 
 ## Romain ODET 
 *romain.odet@lecole-ldlc.com*
+
 **GITHUB REPO : https://github.com/romainodet/Calcul.git**
 
 ## Vos fonctionnalités :

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# coding: utf-8
 """
                  /
     |      /  |////:  o////  ./////    s`      y////-
@@ -24,7 +25,7 @@
 
 # Function permit to clear the screen with the number of line which are indicate in the attribute
 def blank(lignes):
-    for i in range(lignes): #
+    for i in range(lignes):
         print("")
     return 0
 
@@ -200,9 +201,21 @@ def rgbtocmyk(R, G, B):
 while True:
     print("""Le CONVERTISSEUR""")
     print("")
-    choice = int(input(
-        " - Tapez 1 pour convertir un nombre décimal en binaire\n - Tapez 2 pour convertir un nombre binaire vers un nombre décimal\n - Tapez 3 avoir un texte en rot13\n - Tapez 4 pour convertir des dollars en euros\n - Tapez 5 pour convertir une température\n - Tapez 6 pour convertir des prix en TTC ou HT\n - Tapez 7 pour convertir une couleur RGB en CMJN et hexadécimal\n\n - Tapez 0 pour quitter\n\n Faites votre choix : "))  # get the choice of the user
-    if choice == 1:  # THe dectobin
+    print(" - Tapez 1 pour convertir un nombre décimal en binaire")
+    print(" - Tapez 2 pour convertir un nombre binaire vers un nombre décimal")
+    print(" - Tapez 3 avoir un texte en rot13")
+    print(" - Tapez 4 pour convertir des dollars en euros")
+    print(" - Tapez 5 pour convertir une température")
+    print(" - Tapez 6 pour convertir des prix en TTC ou HT")
+    print(" - Tapez 7 pour convertir une couleur RGB en CMJN et hexadécimal")
+    print("")
+    print("")
+    print("- Tapez 0 pour quitter")
+
+    choice = int(input("Votre choix : "))
+    # get the choice of the user
+        # THe dectobin
+    if choice == 1:
         value = int(input("Quel nombre voulez vous convertir ?"))  # enter the dec value
         dectobin(value)  # print the bin value
     elif choice == 2:  # The bintodec

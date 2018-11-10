@@ -193,6 +193,19 @@ def rgbtocmyk(R, G, B):
     pause()
     blank(30)
     return 0
+
+def rad_deg(entry):
+    tableau = list(entry)  # define a list with the attributeibuts values
+    unite = tableau[len(tableau) - 1].lower() # Take the last character of the list and make this character lower and store him into the var
+    del tableau[len(tableau) - 1]  # Del the last character and delete it to the list
+    angle = float("".join(tableau))  # Join all the other characters of list and make them as a float
+    if unite == "d":  # if the unity is degrees
+        print ('Votre angle mesure', angle / 57.29, 'R')
+    if unite == 'r':
+        print ('Votre angle mesure', angle * 57.29, 'd')
+    return 0
+
+    
 # Functions finish
 
 
@@ -208,6 +221,7 @@ while True:
     print(" - Tapez 5 pour convertir une température")
     print(" - Tapez 6 pour convertir des prix en TTC ou HT")
     print(" - Tapez 7 pour convertir une couleur RGB en CMJN et hexadécimal")
+    print(' - Tapez 8 pour convertir des angles en degrés et radians')
     print("")
     print("")
     print("- Tapez 0 pour quitter")
@@ -249,6 +263,9 @@ while True:
             else:
                 rgbtocmyk(R, G, B)  # print the convert values
                 break
+    elif choice == 8:
+        temp = input('Merci d\'entrez votre temperature suivi de leurs unité 15d ou 15r : ')
+        rad_deg(temp)
     elif choice == 0:
         exit("Interruption demandé par l'utilisateur")
 # End of the program

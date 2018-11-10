@@ -19,5 +19,4 @@ Difficulté : VERT
 - [x] Convertisseur Dollar vers Euros 
 - [x] Convertisseur TTC <=> HT
 - [x] Convertisseur RGB vers CMJN et hexadecimal
-
-
+- [x] Convertisseur Radian Degrés

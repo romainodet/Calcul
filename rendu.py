@@ -203,6 +203,8 @@ def rad_deg(entry):
         print ('Votre angle mesure', angle / 57.29, 'R')
     if unite == 'r':
         print ('Votre angle mesure', angle * 57.29, 'd')
+    pause()
+    blank(30)
     return 0
 
     
@@ -263,9 +265,10 @@ while True:
             else:
                 rgbtocmyk(R, G, B)  # print the convert values
                 break
-    elif choice == 8:
-        temp = input('Merci d\'entrez votre temperature suivi de leurs unité 15d ou 15r : ')
+    elif choice == 8:  # angle conversion
+        temp = input('Merci d\'entrez votre angle suivi de leurs unité 15d ou 15r : ')
         rad_deg(temp)
-    elif choice == 0:
+
+    elif choice == 0:  # quit the program
         exit("Interruption demandé par l'utilisateur")
 # End of the program
